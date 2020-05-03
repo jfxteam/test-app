@@ -1,0 +1,17 @@
+{
+  "name": "jfxteam/test-app",
+  "description": "test",
+  "type": "project",
+  "authors": [
+    {
+      "name": "Anton Lebedev",
+      "email": "dunloop8@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Modules\\": "modules/",
+      "API\\": "api/"
+    }
+  }
+}

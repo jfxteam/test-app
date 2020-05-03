@@ -1,0 +1,26 @@
+RewriteEngine On
+
+# api
+RewriteCond %{REQUEST_URI} ^/api/
+RewriteRule ^api/(.+?)/(.+?)/*$ /index.php?object=$1&action=$2 [L,QSA]
+
+# public folder
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} !^/public/
+RewriteRule ^(.*)$ /public/$1 [L]
+
+# frontend router
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ /public/ [L]
+
+# home page
+RewriteCond %{REQUEST_URI} ^/$
+RewriteRule ^ /public/ [L]
+
+# system folders
+RewriteCond %{REQUEST_FILENAME} /modules/ [OR]
+RewriteCond %{REQUEST_FILENAME} /vendor/ [OR]
+RewriteCond %{REQUEST_FILENAME} /api/
+RewriteRule ^ /public/ [L]
