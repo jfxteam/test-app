@@ -8,7 +8,13 @@ A simple API interface
 
 1. Clone the repository to your server
 
-2. Define db entries in your ```config.php```. Example:
+2. Install dependencies:
+
+   ```bash
+   composer install
+   ```
+
+3. Define db entries in your ```config.php```. Example:
 
    ```php
    define('DB_USER','root');
@@ -91,4 +97,6 @@ fetch('/api/todo/list')
 
 ## System requirements
 
-PHP 7.1 or higher, Apache 2.4
+1. PHP 7.1 or higher
+2. Apache 2.4
+3. Composer 1.10.1
