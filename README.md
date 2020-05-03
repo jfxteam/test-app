@@ -84,9 +84,26 @@ fetch('/api/todo/get', {
 .then(r => r.json())
 ```
 
+#### Delete todo
+
+For deleting todo use ```/api/todo/delete``` with id:
+
+```javascript
+fetch('/api/todo/delete', {
+  method: 'POST',
+  headers: {
+      'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+      id: 2
+  })
+})
+.then(r => r.json())
+```
+
 #### List todo
 
-For getting the list of all todos use ```api/todo/list```:
+For getting the list of all todos use ```/api/todo/list```:
 
 ```javas
 fetch('/api/todo/list')
